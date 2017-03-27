@@ -10,6 +10,9 @@ gem 'mini_magick'
 
 gem 'simple_form'
 
+gem 'mina'
+gem 'mina-puma', require: false
+
 gem 'jquery-rails'
 gem 'responders'
 
