@@ -1,0 +1,16 @@
+development: &development
+  host: localhost
+  adapter: mysql2
+  encoding: utf8
+  database: deploy_app_development
+  pool: 5
+  username: postgres
+  password:
+
+test:
+  <<: *development
+  database: deploy_app_test
+
+production:
+  <<: *development
+  database: deploy_app_production
