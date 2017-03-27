@@ -1,7 +1,6 @@
 development: &development
   host: localhost
   adapter: postgresql
-  encoding: utf8
   database: deploy_app_development
   pool: 5
   username: postgres

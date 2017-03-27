@@ -12,7 +12,7 @@ set :deploy_to, '/home/deployer/deploy-app'
 set :repository, 'git@github.com:dmitriy-strukov/deploy-app.git'
 set :branch, 'master'
 
-set :rails_env, 'production'
+set :rails_env, 'development'
 
 task :environment do
   invoke :'rbenv:load'
@@ -20,6 +20,8 @@ end
 
 task deploy: :environment do
   deploy do
+    command %{echo "DATABASE_PASSWORD=$POSTGRESPSW" > /home/deployer/deploy-app/.env}
+
     invoke :'git:clone'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
