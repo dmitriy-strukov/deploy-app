@@ -1,0 +1,7 @@
+%article
+  %h1
+    = @article.title
+  = image_tag @article.image.thumb
+  %p
+    = @article.description
+  = render 'actions', article: @article

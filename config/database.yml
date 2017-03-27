@@ -1,11 +1,11 @@
 development: &development
   host: localhost
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: deploy_app_development
   pool: 5
   username: postgres
-  password:
+  password: <%= ENV['DATABASE_PASSWORD'] %>
 
 test:
   <<: *development

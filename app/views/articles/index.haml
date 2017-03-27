@@ -1,0 +1,9 @@
+= link_to 'New article', new_article_path
+- @articles.each do |article|
+  %article
+    = image_tag article.image.thumb
+    %h1
+      = link_to article.title, article_path(article)
+    %p
+      = article.description
+    = render 'actions', article: article
