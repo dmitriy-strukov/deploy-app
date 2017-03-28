@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
+    Rails.logger.debug "#{@article.errors.full_messages}"
 
     respond_with @article
   end
@@ -24,7 +25,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id]).update(article_params)
+    @article = Article.find(params[:id])
+    @article.update(article_params)
 
     respond_with @article
   end
