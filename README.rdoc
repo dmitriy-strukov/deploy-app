@@ -1,3 +1,5 @@
 == Deploying via Mina in Docker container
 
 Test Application for deploying via Mina
+
+https://hub.docker.com/r/dmitriystrukov2011/mina-deploy-tutorial/
